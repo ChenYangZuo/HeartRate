@@ -33,7 +33,7 @@ int main(){
 
 bool extractInfo(vector<int>&array){
     VideoCapture cap;
-    cap.open("../../src/test.mp4");
+    cap.open("../src/test.mp4");
     if(!cap.isOpened()){
         cout << "ERROR 01!";
         return false;
@@ -72,7 +72,7 @@ bool extractInfo(vector<int>&array){
 
 bool writeData(vector<int>&array){
     ofstream outFile;
-    outFile.open("../../data/data_hsv_filter.txt");
+    outFile.open("../data/data_hsv_filter.txt");
     for(vector<int>::size_type i=0;i<array.size();i++){
         outFile << array[i] << endl;
     }
@@ -167,7 +167,7 @@ bool drawHistogram(vector<int>&array){
         line(img,pt1,pt2,CV_RGB(255,255,255),1,8,0);
     }
 
-    imwrite("../../data/histogram_hsv_filter.bmp",img);
+    imwrite("../data/histogram_hsv_filter.bmp",img);
     imshow("Histogram_hsv_filter",img);
     waitKey(0);
     return true;
